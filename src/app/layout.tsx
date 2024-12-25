@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata =
 {
-    title: "{{PROJECT_NAME}}",
-    description: "{{PROJECT_NAME}}",
-    metadataBase: new URL("https://kienre.github.io/{{PROJECT_NAME}}/")
+    title: "biomass",
+    description: "biomass",
+    metadataBase: new URL("https://kienre.github.io/biomass/")
 };
 
 export default function RootLayout ({children}: Readonly<{children: React.ReactNode;}>)
