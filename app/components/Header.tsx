@@ -6,6 +6,10 @@ import Image from 'next/image'
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <motion.header 
       className="bg-white text-gray-800 py-4 px-6 md:px-12 fixed w-full z-50 shadow-md"
@@ -16,7 +20,8 @@ export function Header() {
       <div className="container mx-auto flex justify-between items-center">
         <motion.div 
           whileHover={{ scale: 1.05 }}
-          className="flex items-center"
+          className="flex items-center cursor-pointer"
+          onClick={scrollToTop}
         >
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Biogas-Minichmair_Logo_NoText-RFHFZoEAQHNwBkSOvdA1f27LXvrbk7.png"

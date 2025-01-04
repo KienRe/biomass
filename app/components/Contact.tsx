@@ -18,7 +18,7 @@ export function Contact() {
           </p>
           <motion.a 
             href="mailto:ried@energie-minichmair.at" 
-            className="bg-green-600 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-green-700 transition duration-300 inline-flex items-center"
+            className="bg-green-800 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-green-700 transition duration-300 inline-flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -11,10 +11,10 @@ const reasons = [
 
 export function WhyUs() {
   return (
-    <section className="py-16 md:py-24 bg-green-600 text-white">
+    <section className="py-16 md:py-24 bg-green-100">
       <div className="container mx-auto px-6 md:px-12">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
+          className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -31,8 +31,8 @@ export function WhyUs() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
-              <CheckCircle className="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-300" />
-              <p className="text-lg">{reason}</p>
+              <CheckCircle className="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-600" />
+              <p className="text-lg text-gray-700">{reason}</p>
             </motion.div>
           ))}
         </div>
