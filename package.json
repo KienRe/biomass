@@ -6,11 +6,11 @@
   {
     "dev": "next dev --turbopack",
     "build": "next build",
-	"build:local": "set NODE_ENV=development && next build",
-	"build:wsl": "wsl bash -ic \"cd $(wslpath '%cd%') && npm ci && npm run build\"",
+	  "build:local": "set NODE_ENV=development && next build",
+	  "build:wsl": "wsl bash -ic \"cd $(wslpath '%cd%') && npm ci && npm run build\"",
     "start": "npx serve@latest out",
     "test": "vitest --config Tests/Config/vitest.config.mts",
-	"test:wsl": "wsl bash -ic \"cd $(wslpath '%cd%') && npm ci && npm run test\"",
+	  "test:wsl": "wsl bash -ic \"cd $(wslpath '%cd%') && npm ci && npm run test\"",
     "format": "eslint . --config Config/Linting/eslint.config.mjs --fix --format stylish",
     "format:check": "eslint . --config Config/Linting/eslint.config.mjs --format stylish",
     "format:inspect": "eslint . --config Config/Linting/eslint.config.mjs --inspect-config",
@@ -21,7 +21,10 @@
   {
     "next": "15.1.0",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "framer-motion": "11.15.0",
+    "lucide-react": "0.469.0",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": 
   {
