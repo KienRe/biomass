@@ -33,6 +33,12 @@
   
   <title>Energie Minichmair | Biogas Ried | Werner Minichmair</title>
   
+  <!-- Resource Hints for Performance -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -40,17 +46,39 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   
   <style>
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* ==========================================
+       BASE STYLES
+       ========================================== */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
     }
     
+    img {
+      loading: lazy;
+      decoding: async;
+    }
+    
+    /* ==========================================
+       ANIMATIONS
+       ========================================== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    /* ==========================================
+       ANIMATION CLASSES
+       ========================================== */
     .fade-in {
       animation: fadeIn 0.8s ease-out forwards;
     }
@@ -68,28 +96,9 @@
       animation: slideInRight 0.8s ease-out 0.2s forwards;
     }
     
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
+    /* ==========================================
+       HOVER EFFECTS
+       ========================================== */
     .hover-scale:hover {
       transform: scale(1.05);
       transition: transform 0.3s ease;
@@ -100,10 +109,40 @@
       transition: transform 0.3s ease;
     }
     
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    /* ==========================================
+       ACCESSIBILITY
+       ========================================== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
     }
     
+    .sr-only:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0.5rem;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+    
+    button:focus {
+      outline: 2px solid #16a34a;
+      outline-offset: 2px;
+    }
+    
+    /* ==========================================
+       MOBILE MENU
+       ========================================== */
     #mobile-menu {
       display: none;
     }
@@ -112,7 +151,9 @@
       display: block;
     }
     
-    /* Mobile optimizations */
+    /* ==========================================
+       RESPONSIVE DESIGN
+       ========================================== */
     @media (max-width: 768px) {
       html {
         -webkit-text-size-adjust: 100%;
@@ -125,46 +166,58 @@
       }
     }
     
-    /* Touch optimizations */
+    /* ==========================================
+       MOBILE TOUCH OPTIMIZATIONS
+       ========================================== */
     a, button {
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
-    
-    /* Performance optimizations */
-    img {
-      loading: lazy;
-      decoding: async;
-    }
   </style>
 </head>
 <body class="bg-white">
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-green-800 focus:text-white focus:px-4 focus:py-2 focus:rounded-md">
+    Zum Inhalt springen
+  </a>
   
-  <!-- Header -->
+  <!-- ==========================================
+       HEADER / NAVIGATION
+       ========================================== -->
   <header id="header" role="banner" class="bg-white text-gray-800 py-4 px-6 md:px-12 fixed w-full z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
       <div class="flex items-center cursor-pointer" onclick="scrollToTop()" tabindex="0" role="button" aria-label="Scroll to top">
         <img src="public/Logo_NoText.png" alt="Biogas Minichmair GmbH Logo" class="w-auto h-[45px]" width="180" height="45">
       </div>
+      
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-4" role="navigation" aria-label="Main navigation">
-        <a href="#services" class="hover:text-green-600 transition duration-300" aria-label="Go to services section">Leistungen</a>
-        <a href="#about" class="hover:text-green-600 transition duration-300" aria-label="Go to about section">Über uns</a>
-        <a href="#categories" class="hover:text-green-600 transition duration-300" aria-label="Go to categories section">Kategorien</a>
-        <a href="#contact" class="hover:text-green-600 transition duration-300" aria-label="Go to contact section">Kontakt</a>
+        <a href="#services" class="hover:text-green-600">Leistungen</a>
+        <a href="#about" class="hover:text-green-600">Über uns</a>
+        <a href="#categories" class="hover:text-green-600">Kategorien</a>
+        <a href="#contact" class="hover:text-green-600">Kontakt</a>
       </nav>
+      
+      <!-- Mobile Menu Toggle -->
       <button class="md:hidden" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" id="menu-button">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
+    
+    <!-- Mobile Navigation -->
     <nav id="mobile-menu" class="md:hidden mt-4 space-y-2" role="navigation" aria-label="Mobile navigation">
-      <a href="#services" class="block hover:text-green-600 transition duration-300">Leistungen</a>
-      <a href="#about" class="block hover:text-green-600 transition duration-300">Über uns</a>
-      <a href="#categories" class="block hover:text-green-600 transition duration-300">Kategorien</a>
-      <a href="#contact" class="block hover:text-green-600 transition duration-300">Kontakt</a>
+      <a href="#services" class="block hover:text-green-600">Leistungen</a>
+      <a href="#about" class="block hover:text-green-600">Über uns</a>
+      <a href="#categories" class="block hover:text-green-600">Kategorien</a>
+      <a href="#contact" class="block hover:text-green-600">Kontakt</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <main id="main-content">
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero section">
     <div class="absolute inset-0 z-0">
       <img src="public/Farm.jpeg" alt="Biogas Anlage von Energie Minichmair in Ried" class="w-full h-full object-cover">
@@ -186,7 +239,9 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- ==========================================
+       SERVICES SECTION
+       ========================================== -->
   <section id="services" class="py-16 md:py-24 bg-white" aria-labelledby="services-heading">
     <div class="container mx-auto px-6 md:px-12">
       <h2 id="services-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
@@ -225,7 +280,9 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ==========================================
+       ABOUT SECTION
+       ========================================== -->
   <section id="about" class="py-16 md:py-24 bg-green-100" aria-labelledby="about-heading">
     <div class="container mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row items-center gap-12">
@@ -245,7 +302,9 @@
     </div>
   </section>
 
-  <!-- Categories Section -->
+  <!-- ==========================================
+       CATEGORIES SECTION
+       ========================================== -->
   <section id="categories" class="py-16 md:py-24 bg-white" aria-labelledby="categories-heading">
     <div class="container mx-auto px-6 md:px-12">
       <h2 id="categories-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
@@ -281,7 +340,9 @@
     </div>
   </section>
 
-  <!-- Why Us Section -->
+  <!-- ==========================================
+       WHY US SECTION
+       ========================================== -->
   <section class="py-16 md:py-24 bg-green-100" aria-labelledby="whyus-heading">
     <div class="container mx-auto px-6 md:px-12">
       <h2 id="whyus-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
@@ -308,7 +369,9 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- ==========================================
+       CONTACT SECTION
+       ========================================== -->
   <section id="contact" class="py-16 md:py-24 bg-white" aria-labelledby="contact-heading">
     <div class="container mx-auto px-6 md:px-12">
       <div class="max-w-3xl mx-auto text-center p-8 rounded-lg shadow-lg fade-in">
@@ -324,12 +387,14 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
   <footer class="bg-green-800 text-white py-12" role="contentinfo">
     <div class="container mx-auto px-6 md:px-12">
-      <div class="flex flex-col md:flex-row justify-between items-start">
+      <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left">
         <div class="mb-8 md:mb-0">
-          <img src="public/Logo_NoText.png" alt="Biogas Minichmair GmbH Logo" class="w-auto h-[40px] brightness-0 invert mb-4" loading="lazy" width="160" height="40">
+          <img src="public/Logo_NoText.png" alt="Biogas Minichmair GmbH Logo" class="w-auto h-[40px] brightness-0 invert mb-4 mx-auto md:mx-0" loading="lazy" width="160" height="40">
           <p>Großendorf 10</p>
           <p>4551 Ried im Traunkreis</p>
           <p>Österreich</p>
@@ -350,6 +415,7 @@
       </div>
     </div>
   </footer>
+  </main>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -375,10 +441,6 @@
       "postalCode": "4551",
       "addressCountry": "AT"
     },
-    "sameAs": [
-      "https://www.facebook.com/energieminichmair",
-      "https://www.linkedin.com/company/energie-minichmair-gmbh"
-    ],
     "founder": {
       "@type": "Person",
       "name": "Werner Minichmair"
@@ -388,24 +450,34 @@
 
   <!-- JavaScript -->
   <script>
-    // Initialize Lucide icons
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
     lucide.createIcons();
     
-    // Smooth scroll to top
+    // ==========================================
+    // UTILITY FUNCTIONS
+    // ==========================================
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    // Toggle mobile menu
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
+      const button = document.getElementById('menu-button');
+      const isExpanded = menu.classList.contains('show');
+      
       menu.classList.toggle('show');
+      button.setAttribute('aria-expanded', !isExpanded);
     }
     
-    // Smooth scrolling for anchor links
+    // ==========================================
+    // SMOOTH SCROLLING
+    // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           target.scrollIntoView({
@@ -413,12 +485,15 @@
             block: 'start'
           });
         }
-        // Close mobile menu if open
+        
+        // Close mobile menu on navigation
         document.getElementById('mobile-menu').classList.remove('show');
       });
     });
     
-    // Intersection Observer for animations
+    // ==========================================
+    // SCROLL ANIMATIONS
+    // ==========================================
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -432,7 +507,7 @@
       });
     }, observerOptions);
     
-    // Observe elements for scroll animations
+    // Initialize scroll animations
     document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
       el.style.opacity = '0';
       observer.observe(el);
