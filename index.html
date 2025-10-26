@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Energie Minichmair GmbH - Ihr Experte für Biogas in Ried. Innovative Lösungen für nachhaltige Energiegewinnung und Reststoffverwertung.">
+  <meta name="keywords" content="Energie Minichmair, Biogas Ried, Werner Minichmair, nachhaltige Energie, Reststoffverwertung, Biogasanlage">
+  <meta name="author" content="Biogas Minichmair GmbH">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.energie-minichmair.at">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.energie-minichmair.at">
+  <meta property="og:title" content="Energie Minichmair | Biogas Ried | Werner Minichmair">
+  <meta property="og:description" content="Energie Minichmair GmbH - Ihr Experte für Biogas in Ried. Innovative Lösungen für nachhaltige Energiegewinnung und Reststoffverwertung.">
+  <meta property="og:image" content="https://www.energie-minichmair.at/public/logo.png">
+  <meta property="og:locale" content="de_AT">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.energie-minichmair.at">
+  <meta name="twitter:title" content="Energie Minichmair | Biogas Ried">
+  <meta name="twitter:description" content="Energie Minichmair GmbH - Ihr Experte für Biogas in Ried.">
+  <meta name="twitter:image" content="https://www.energie-minichmair.at/public/logo.png">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#065f46">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Biogas Minichmair">
+  
+  <title>Energie Minichmair | Biogas Ried | Werner Minichmair</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .fade-in-delay {
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out 0.2s forwards;
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #mobile-menu {
+      display: none;
+    }
+    
+    #mobile-menu.show {
+      display: block;
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    
+    /* Touch optimizations */
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    
+    /* Performance optimizations */
+    img {
+      loading: lazy;
+      decoding: async;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  
+  <!-- Header -->
+  <header id="header" role="banner" class="bg-white text-gray-800 py-4 px-6 md:px-12 fixed w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center cursor-pointer" onclick="scrollToTop()" tabindex="0" role="button" aria-label="Scroll to top">
+        <img src="public/Logo_NoText.png" alt="Biogas Minichmair GmbH Logo" class="w-auto h-[45px]" width="180" height="45">
+      </div>
+      <nav class="hidden md:flex space-x-4" role="navigation" aria-label="Main navigation">
+        <a href="#services" class="hover:text-green-600 transition duration-300" aria-label="Go to services section">Leistungen</a>
+        <a href="#about" class="hover:text-green-600 transition duration-300" aria-label="Go to about section">Über uns</a>
+        <a href="#categories" class="hover:text-green-600 transition duration-300" aria-label="Go to categories section">Kategorien</a>
+        <a href="#contact" class="hover:text-green-600 transition duration-300" aria-label="Go to contact section">Kontakt</a>
+      </nav>
+      <button class="md:hidden" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false" id="menu-button">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="md:hidden mt-4 space-y-2" role="navigation" aria-label="Mobile navigation">
+      <a href="#services" class="block hover:text-green-600 transition duration-300">Leistungen</a>
+      <a href="#about" class="block hover:text-green-600 transition duration-300">Über uns</a>
+      <a href="#categories" class="block hover:text-green-600 transition duration-300">Kategorien</a>
+      <a href="#contact" class="block hover:text-green-600 transition duration-300">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Hero section">
+    <div class="absolute inset-0 z-0">
+      <img src="public/Farm.jpeg" alt="Biogas Anlage von Energie Minichmair in Ried" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+      <div class="max-w-4xl mx-auto fade-in">
+        <h1>
+          <img src="public/Logo.png" alt="Energie Minichmair GmbH Logo" class="w-auto h-[100px] mx-auto mb-8 brightness-0 invert" width="400" height="100">
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 text-white fade-in-delay">
+          Ihr Partner für nachhaltige Energiegewinnung und Reststoffverwertung
+        </p>
+        <a href="#contact" class="bg-white text-green-700 py-3 px-6 rounded-full text-lg font-semibold hover:bg-green-100 transition duration-300 inline-flex items-center hover-scale" aria-label="Contact us button">
+          Kontaktieren Sie uns
+          <i data-lucide="arrow-right" class="ml-2 h-5 w-5" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 md:py-24 bg-white" aria-labelledby="services-heading">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 id="services-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
+        Unsere Leistungen
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <article class="bg-green-50 p-6 rounded-lg shadow-md flex items-start hover-scale transition-all">
+          <i data-lucide="recycle" class="w-12 h-12 text-green-600 mr-4 flex-shrink-0" aria-hidden="true"></i>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-green-600">Biogasproduktion aus Reststoffen</h3>
+            <p class="text-gray-700">Wir nutzen organische Abfälle zur Erzeugung von umweltfreundlicher Energie.</p>
+          </div>
+        </article>
+        <article class="bg-green-50 p-6 rounded-lg shadow-md flex items-start hover-scale transition-all">
+          <i data-lucide="apple" class="w-12 h-12 text-green-600 mr-4 flex-shrink-0" aria-hidden="true"></i>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-green-600">Entsorgung von überlagerten Lebensmitteln</h3>
+            <p class="text-gray-700">Sichere und effiziente Lösung für die Entsorgung von abgelaufenen Lebensmitteln.</p>
+          </div>
+        </article>
+        <article class="bg-green-50 p-6 rounded-lg shadow-md flex items-start hover-scale transition-all">
+          <i data-lucide="drumstick" class="w-12 h-12 text-green-600 mr-4 flex-shrink-0" aria-hidden="true"></i>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-green-600">Entsorgung von Schlachtabfällen</h3>
+            <p class="text-gray-700">Hygienische Verwertung von Schlachtabfällen zur Biogasgewinnung.</p>
+          </div>
+        </article>
+        <article class="bg-green-50 p-6 rounded-lg shadow-md flex items-start hover-scale transition-all">
+          <i data-lucide="truck" class="w-12 h-12 text-green-600 mr-4 flex-shrink-0" aria-hidden="true"></i>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-green-600">Flexible Abfallentsorgung mit Abrollcontainern</h3>
+            <p class="text-gray-700">Maßgeschneiderte Containerlösungen für Ihre Abfallentsorgung.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 bg-green-100" aria-labelledby="about-heading">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 slide-in-left">
+          <img src="public/Placeholder.png" alt="Biogas Anlage von Energie Minichmair in Ried" class="rounded-lg shadow-lg w-full h-[400px] object-cover" loading="lazy" decoding="async">
+        </div>
+        <div class="md:w-1/2 slide-in-right">
+          <h2 id="about-heading" class="text-3xl md:text-4xl font-bold mb-6 text-green-700">Über Biogas Minichmair GmbH</h2>
+          <p class="text-lg mb-6 text-gray-700">
+            Die Biogas Minichmair GmbH ist ein innovatives Unternehmen, das sich auf die Nutzung von Reststoffen zur Energiegewinnung spezialisiert hat. Mit unserer modernen Biogasanlage bieten wir Ihnen flexible und nachhaltige Lösungen zur Verwertung von organischen Abfällen, überlagerten Lebensmitteln und Schlachtabfällen.
+          </p>
+          <p class="text-lg text-gray-700">
+            Unser Fokus liegt dabei auf umweltfreundlicher und ressourcenschonender Energieproduktion, die gleichzeitig zur Reduktion von Abfällen beiträgt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="py-16 md:py-24 bg-white" aria-labelledby="categories-heading">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 id="categories-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
+        Unsere Kategorien im Überblick
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover-lift transition-all">
+          <i data-lucide="leaf" class="w-16 h-16 text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3 text-green-600">Biogasproduktion</h3>
+          <p class="text-gray-700">Erfahren Sie mehr über die Technologie und Prozesse hinter unserer Biogasproduktion.</p>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover-lift transition-all">
+          <i data-lucide="apple" class="w-16 h-16 text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3 text-green-600">Überlagerte Lebensmittel entsorgen</h3>
+          <p class="text-gray-700">Wie Sie abgelaufene oder überlagerte Lebensmittel sicher und umweltgerecht entsorgen können.</p>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover-lift transition-all">
+          <i data-lucide="drumstick" class="w-16 h-16 text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3 text-green-600">Schlachtabfälle entsorgen</h3>
+          <p class="text-gray-700">Wir bieten eine hygienische und sichere Lösung für die Entsorgung von Schlachtabfällen.</p>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover-lift transition-all">
+          <i data-lucide="truck" class="w-16 h-16 text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3 text-green-600">Abrollcontainer-Service</h3>
+          <p class="text-gray-700">Hier finden Sie alle Informationen zu unserem flexiblen Abrollcontainer-Service.</p>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center hover-lift transition-all">
+          <i data-lucide="recycle" class="w-16 h-16 text-green-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3 text-green-600">Nachhaltigkeit</h3>
+          <p class="text-gray-700">Entdecken Sie, wie unser Unternehmen durch nachhaltige Prozesse und umweltfreundliche Lösungen zur Energiegewinnung und Abfallverwertung einen Beitrag zum Schutz der Umwelt leistet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="py-16 md:py-24 bg-green-100" aria-labelledby="whyus-heading">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 id="whyus-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700 fade-in">
+        Warum Biogas Minichmair GmbH?
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex items-start hover-scale transition-all">
+          <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-600"></i>
+          <p class="text-lg text-gray-700">Flexibilität: Wir bieten Ihnen maßgeschneiderte Lösungen für Ihre Abfallentsorgung und Biogasproduktion.</p>
+        </div>
+        <div class="flex items-start hover-scale transition-all">
+          <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-600"></i>
+          <p class="text-lg text-gray-700">Umweltfreundlich: Unser Ziel ist es, die Umwelt zu schonen und nachhaltige Lösungen zu schaffen.</p>
+        </div>
+        <div class="flex items-start hover-scale transition-all">
+          <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-600"></i>
+          <p class="text-lg text-gray-700">Innovativ: Wir setzen auf moderne Technologien und effiziente Prozesse zur Biogasgewinnung.</p>
+        </div>
+        <div class="flex items-start hover-scale transition-all">
+          <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 flex-shrink-0 text-green-600"></i>
+          <p class="text-lg text-gray-700">Zuverlässig: Mit unserem Abrollcontainer-Service und der sicheren Entsorgung von Lebensmitteln und Schlachtabfällen sind wir Ihr zuverlässiger Partner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-white" aria-labelledby="contact-heading">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="max-w-3xl mx-auto text-center p-8 rounded-lg shadow-lg fade-in">
+        <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-6 text-green-700">Kontaktieren Sie uns noch heute!</h2>
+        <p class="text-lg mb-8 text-gray-700">
+          Haben Sie Fragen oder benötigen Sie ein Angebot? Unsere Experten stehen Ihnen gerne zur Verfügung, um die besten Lösungen für Ihre Abfallentsorgung und Biogasproduktion zu finden.
+        </p>
+          <a href="mailto:ried@energie-minichmair.at" class="bg-green-800 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-green-700 transition duration-300 inline-flex items-center hover-scale" aria-label="Send email to ried@energie-minichmair.at">
+            Kontakt aufnehmen
+            <i data-lucide="mail" class="ml-2 h-5 w-5" aria-hidden="true"></i>
+          </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-12" role="contentinfo">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-start">
+        <div class="mb-8 md:mb-0">
+          <img src="public/Logo_NoText.png" alt="Biogas Minichmair GmbH Logo" class="w-auto h-[40px] brightness-0 invert mb-4" loading="lazy" width="160" height="40">
+          <p>Großendorf 10</p>
+          <p>4551 Ried im Traunkreis</p>
+          <p>Österreich</p>
+        </div>
+        <div class="mb-8 md:mb-0">
+          <p class="font-semibold mb-2">Kontakt</p>
+          <p>Email: <a href="mailto:ried@energie-minichmair.at" class="hover:text-green-200 transition duration-300">ried@energie-minichmair.at</a></p>
+          <p>Tel: <a href="tel:06504127018" class="hover:text-green-200 transition duration-300">06504127018</a></p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Unternehmensinformationen</p>
+          <p>Firmenbuchnummer: FN 487596 d</p>
+          <p>UID-Nummer: ATU73555547</p>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-green-700 text-center">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Biogas Minichmair GmbH. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Energie Minichmair GmbH",
+    "alternateName": "Biogas Minichmair",
+    "url": "https://www.energie-minichmair.at",
+    "logo": "https://www.energie-minichmair.at/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+43-650-4127018",
+      "contactType": "customer service",
+      "email": "ried@energie-minichmair.at",
+      "areaServed": "AT",
+      "availableLanguage": "German"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Großendorf 10",
+      "addressLocality": "Ried im Traunkreis",
+      "postalCode": "4551",
+      "addressCountry": "AT"
+    },
+    "sameAs": [
+      "https://www.facebook.com/energieminichmair",
+      "https://www.linkedin.com/company/energie-minichmair-gmbh"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Werner Minichmair"
+    }
+  }
+  </script>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('show');
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+        // Close mobile menu if open
+        document.getElementById('mobile-menu').classList.remove('show');
+      });
+    });
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements for scroll animations
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
+
