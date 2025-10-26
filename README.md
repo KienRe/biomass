@@ -1,1 +1,0 @@
-# Biogas Minichmair GmbH
